@@ -1,0 +1,32 @@
+{
+	"id": "da29df02-21b0-26f1-83f4-1f9f42a468ff",
+	"name": "AcuityConnectcopy",
+	"description": "",
+	"order": [
+		"ebaa59e2-2857-0b10-b5c5-9d45c708ef65"
+	],
+	"folders": [],
+	"timestamp": 1494271122619,
+	"owner": "1255213",
+	"public": false,
+	"requests": [
+		{
+			"id": "ebaa59e2-2857-0b10-b5c5-9d45c708ef65",
+			"headers": "grant_type: password\nusername: VidapV01\npassword: Vending44\ntoken_type: bearer\nrefresh_token: 4a952f8876b249608ec26fe0438e679e\nIsADUser: True\nContent-Type: application/x-www-form-urlencoded\n",
+			"url": "https://demo.compassoneacuity.com/connect/token",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntry {\n    var data = JSON.parse(responseBody);\n    tests[\"Body contains Name\"] = responseBody.has(\"Vishwanath Vidap\");\n    tests[\"Body contains Username\"] = responseBody.has(\"VidapV01\");\n    tests[\"Body contains IsADUser\"] = responseBody.has(\"True\");\n}\ncatch(e) {\n    console.log('Cannot parse response,probably not a JSON');\n}\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1494272455814,
+			"name": "Login",
+			"description": "",
+			"collectionId": "da29df02-21b0-26f1-83f4-1f9f42a468ff",
+			"rawModeData": "grant_type=password&username=VidapV01&password=Vending44&deviceDetails={\"RegistrationId\":\"APA91bFtJI2KiW4_sfR6btYhOSo3J_8FysIPlMGnQqJ3XFcIBucZKiG02FNV8TRpBZym6hkfSLkQuZesks6tgDG9jIPwJNJZS3_R3zIYmq1CED5AaN9jltbu_1Z8aClnVydhFSOKG5mk\",\"Model\":\"SM-G920I\",\"Platform\":\"Android\",\"Manufacturer\":\"samsung\",\"Uuid\":\"27625df7dd0f5cd2\",\"OsVersion\":\"5.1.1\"}\n"
+		}
+	]
+}
